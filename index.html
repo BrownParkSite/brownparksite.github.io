@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brown Park Home</title>
+    <link rel="stylesheet" href="./styles/indexStyles.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <h1 class="siteHeader">Brown Park</h1>
+</div>
+
+<div class="subhead">1000 Browns Lane, St. Matthews, KY 40207</div>
+
+<div class="header">
+    <div class="headerLinksDiv">
+        <a style="color: rgb(187, 187, 187);" class="headerLinks" href="./index.html">Home</a>
+        <a class="headerLinks" href="./brownparkamenities.html">Amenities</a>
+        <a class="headerLinks" href="./brownparkphotos.html">Photos</a>
+        <a class="headerLinks" href="./brownparkdonations.html">Donations</a>
+    </div>
+</div>
+
+<div class="spacer"></div>
+    
+<div class="heroImage"><img class="signImg" src="./images/bluesky.jpg"></div>
+
+<div class="spacer"></div>
+
+<div class="topTextContainer">
+    <div class="textDiv1">
+        <div class="hoursLocation">
+            <div><h1>HOURS</h1><br><p class="bodyCopy">Sunday-Monday</p><br>
+                          <p class="bodyCopy">7AM-8PM</p></div>
+            <div><h1>LOCATION</h1><br>
+                <p class="bodyCopy">1000 Browns Lane, St. Matthews, KY 40207</p></div>
+        </div>
+        <div class="wmopg" style="text-align: center;">
+            <h1>WHAT MAKES OUR PARK GREAT</h1><br>
+                <p class="bodyCopy">We offer plenty of activities and ways to spend your day. Host your cookout with our BBQ Grills, or enjoy a walk through our scenic trails. We have a playground too, so feel free to bring the kids! Our duck & geese pond is always a relaxing way to spend some time, and our historic cemetary has been around for over 200 years. However you're looking to spend the day, we've got you covered.</p><br>
+        </div>
+    </div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="photoCarousel">
+
+    <div class="guestPhotosDiv"><a class="guestPhotos" href="./brownparkphotos.html">PHOTOS FROM OUR GUESTS</a></div>
+    
+        <div class="slider-container">
+
+            <div class="slider-content">
+        
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./images/DSC_0028.JPG" alt="1">
+                    </a>
+                </div>
+        
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./images/pinkFlowers1.JPG" alt="2">
+                    </a>
+                </div>
+        
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./images/seatingArea.JPG" alt="3">
+                    </a>
+                </div>
+        
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./images/pinkFlowers2.JPG" alt="4">
+                    </a>
+                </div>
+        
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./images/whiteFlowers.JPG" alt="5">
+                    </a>
+                </div>
+        
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./images/flower.JPG" alt="6">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+</div>
+
+<script>
+    const repeat = false;
+    const noArrows = false;
+    const noBullets = false;
+
+
+    const container = document.querySelector('.slider-container');
+    var slide = document.querySelectorAll('.slider-single');
+    var slideTotal = slide.length - 1;
+    var slideCurrent = -1;
+
+function initBullets() {
+    if (noBullets) {
+        return;
+    }
+    const bulletContainer = document.createElement('div');
+    bulletContainer.classList.add('bullet-container')
+    slide.forEach((elem, i) => {
+        const bullet = document.createElement('div');
+        bullet.classList.add('bullet')
+        bullet.id = `bullet-index-${i}`
+        bullet.addEventListener('click', () => {
+            goToIndexSlide(i);
+        })
+        bulletContainer.appendChild(bullet);
+        elem.classList.add('proactivede');
+    })
+    container.appendChild(bulletContainer);
+}
+
+function initArrows() {
+    if (noArrows) {
+        return;
+    }
+    const leftArrow = document.createElement('a')
+    const iLeft = document.createElement('i');
+    iLeft.classList.add('fa')
+    iLeft.classList.add('fa-arrow-left')
+    leftArrow.classList.add('slider-left')
+    leftArrow.appendChild(iLeft)
+    leftArrow.addEventListener('click', () => {
+        slideLeft();
+    })
+    const rightArrow = document.createElement('a')
+    const iRight = document.createElement('i');
+    iRight.classList.add('fa')
+    iRight.classList.add('fa-arrow-right')
+    rightArrow.classList.add('slider-right')
+    rightArrow.appendChild(iRight)
+    rightArrow.addEventListener('click', () => {
+        slideRight();
+    })
+    container.appendChild(leftArrow);
+    container.appendChild(rightArrow);
+}
+
+function slideInitial() {
+    initBullets();
+    initArrows();
+    setTimeout(function () {
+        slideRight();
+    }, 500);
+}
+
+function updateBullet() {
+    if (!noBullets) {
+        document.querySelector('.bullet-container').querySelectorAll('.bullet').forEach((elem, i) => {
+            elem.classList.remove('active');
+            if (i === slideCurrent) {
+                elem.classList.add('active');
+            }
+        })
+    }
+    checkRepeat();
+}
+
+function checkRepeat() {
+    if (!repeat) {
+        if (slideCurrent === slide.length - 1) {
+            slide[0].classList.add('not-visible');
+            slide[slide.length - 1].classList.remove('not-visible');
+            if (!noArrows) {
+                document.querySelector('.slider-right').classList.add('not-visible')
+                document.querySelector('.slider-left').classList.remove('not-visible')
+            }
+        }
+        else if (slideCurrent === 0) {
+            slide[slide.length - 1].classList.add('not-visible');
+            slide[0].classList.remove('not-visible');
+            if (!noArrows) {
+                document.querySelector('.slider-left').classList.add('not-visible')
+                document.querySelector('.slider-right').classList.remove('not-visible')
+            }
+        } else {
+            slide[slide.length - 1].classList.remove('not-visible');
+            slide[0].classList.remove('not-visible');
+            if (!noArrows) {
+                document.querySelector('.slider-left').classList.remove('not-visible')
+                document.querySelector('.slider-right').classList.remove('not-visible')
+            }
+        }
+    }
+}
+
+function slideRight() {
+    if (slideCurrent < slideTotal) {
+        slideCurrent++;
+    } else {
+        slideCurrent = 0;
+    }
+
+    if (slideCurrent > 0) {
+        var preactiveSlide = slide[slideCurrent - 1];
+    } else {
+        var preactiveSlide = slide[slideTotal];
+    }
+    var activeSlide = slide[slideCurrent];
+    if (slideCurrent < slideTotal) {
+        var proactiveSlide = slide[slideCurrent + 1];
+    } else {
+        var proactiveSlide = slide[0];
+
+    }
+
+    slide.forEach((elem) => {
+        var thisSlide = elem;
+        if (thisSlide.classList.contains('preactivede')) {
+            thisSlide.classList.remove('preactivede');
+            thisSlide.classList.remove('preactive');
+            thisSlide.classList.remove('active');
+            thisSlide.classList.remove('proactive');
+            thisSlide.classList.add('proactivede');
+        }
+        if (thisSlide.classList.contains('preactive')) {
+            thisSlide.classList.remove('preactive');
+            thisSlide.classList.remove('active');
+            thisSlide.classList.remove('proactive');
+            thisSlide.classList.remove('proactivede');
+            thisSlide.classList.add('preactivede');
+        }
+    });
+    preactiveSlide.classList.remove('preactivede');
+    preactiveSlide.classList.remove('active');
+    preactiveSlide.classList.remove('proactive');
+    preactiveSlide.classList.remove('proactivede');
+    preactiveSlide.classList.add('preactive');
+
+    activeSlide.classList.remove('preactivede');
+    activeSlide.classList.remove('preactive');
+    activeSlide.classList.remove('proactive');
+    activeSlide.classList.remove('proactivede');
+    activeSlide.classList.add('active');
+
+    proactiveSlide.classList.remove('preactivede');
+    proactiveSlide.classList.remove('preactive');
+    proactiveSlide.classList.remove('active');
+    proactiveSlide.classList.remove('proactivede');
+    proactiveSlide.classList.add('proactive');
+
+    updateBullet();
+}
+
+function slideLeft() {
+    if (slideCurrent > 0) {
+        slideCurrent--;
+    } else {
+        slideCurrent = slideTotal;
+    }
+
+    if (slideCurrent < slideTotal) {
+        var proactiveSlide = slide[slideCurrent + 1];
+    } else {
+        var proactiveSlide = slide[0];
+    }
+    var activeSlide = slide[slideCurrent];
+    if (slideCurrent > 0) {
+        var preactiveSlide = slide[slideCurrent - 1];
+    } else {
+        var preactiveSlide = slide[slideTotal];
+    }
+    slide.forEach((elem) => {
+        var thisSlide = elem;
+        if (thisSlide.classList.contains('proactive')) {
+            thisSlide.classList.remove('preactivede');
+            thisSlide.classList.remove('preactive');
+            thisSlide.classList.remove('active');
+            thisSlide.classList.remove('proactive');
+            thisSlide.classList.add('proactivede');
+        }
+        if (thisSlide.classList.contains('proactivede')) {
+            thisSlide.classList.remove('preactive');
+            thisSlide.classList.remove('active');
+            thisSlide.classList.remove('proactive');
+            thisSlide.classList.remove('proactivede');
+            thisSlide.classList.add('preactivede');
+        }
+    });
+
+    preactiveSlide.classList.remove('preactivede');
+    preactiveSlide.classList.remove('active');
+    preactiveSlide.classList.remove('proactive');
+    preactiveSlide.classList.remove('proactivede');
+    preactiveSlide.classList.add('preactive');
+
+    activeSlide.classList.remove('preactivede');
+    activeSlide.classList.remove('preactive');
+    activeSlide.classList.remove('proactive');
+    activeSlide.classList.remove('proactivede');
+    activeSlide.classList.add('active');
+
+    proactiveSlide.classList.remove('preactivede');
+    proactiveSlide.classList.remove('preactive');
+    proactiveSlide.classList.remove('active');
+    proactiveSlide.classList.remove('proactivede');
+    proactiveSlide.classList.add('proactive');
+
+    updateBullet();
+}
+
+function goToIndexSlide(index) {
+    const sliding = (slideCurrent > index) ? () => slideRight() : () => slideLeft();
+    while (slideCurrent !== index) {
+        sliding();
+    }
+}
+
+slideInitial();
+</script>
+
+<div class="spacer"></div>
+
+<h1 style="text-align: center;">PARK RULES</h1><br>
+    <div class="rulesSection">
+        <p class="bodyCopy">1.) Park is open from dawn to dusk.</p>
+        <p class="bodyCopy">2.) No alcoholic beverages allowed.</p>
+        <p class="bodyCopy">3.) Trails are for walkers and joggers only.</p>  
+        <p class="bodyCopy">4.) Obey the city leash law.</p>
+        <p class="bodyCopy">5.) Put all trash in receptacles.</p>
+        <p class="bodyCopy">6.) Restrooms are for everyone’s use, please help keep them clean.</p>
+        <p class="bodyCopy">7.) No parking on grass. Park in designated areas only.</p>
+    </div>
+
+<div class="spacer"></div>
+
+<div class="heroImage"><img class="signImg" src="./images/park2.jpg"></div>
+
+<div class="spacer"></div>
+
+<div class="historySection"><h1 style="text-align: center;">HISTORY OF BROWN PARK</h1><br>
+    <p class="bodyCopy" style="line-height: 40px; text-align: left;">Brown Park was founded in 1977 when the James Graham Brown family donated the land to the city of St. Matthews. It was recognized in 1997 as an award winning public park by the Landscape Architecture Magazine. And at a whopping 28 acres in size, you will be provided with ample room for play, a nice walk, or just a peaceful day out.</p>
+</div>
+
+<div class="spacer"></div>
+
+<div class="embedMap">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1876.3032586448494!2d-85.63579459038559!3d38.23876888667982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8869752d988b2e7f%3A0x649aeb4dc07ed125!2sBrown%20Park!5e0!3m2!1sen!2sus!4v1744305044826!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div class="spacer"></div>
+
+<div class="backToTop"><a class="bottomLink" href="#top">Back to top</a></div>
+
+<div class="footer">
+    <p class="footerText">1000 Browns Lane, St. Matthews, KY 40207</p>
+    <p class="footerText">(502) 000-0000</p>
+    <p class="footerText">louisvillepublicparks@ky.gov</p>
+</div>
+
+</body>
+</html>

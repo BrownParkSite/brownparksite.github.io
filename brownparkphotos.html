@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brown Park Guest Photos</title>
+    <link rel="stylesheet" href="./styles/photosStyles.css">
+</head>
+<body>
+    
+<div class="wrapper">
+    <h1 class="siteHeader">Brown Park</h1>
+</div>
+
+<div class="subhead">1000 Browns Lane, St. Matthews, KY 40207</div>
+
+<div class="header">
+    <div class="headerLinksDiv">
+        <a class="headerLinks" href="./index.html">Home</a>
+        <a class="headerLinks" href="./brownparkamenities.html">Amenities</a>
+        <a style="color: rgb(187, 187, 187);" class="headerLinks" href="./brownparkphotos.html">Photos</a>
+        <a class="headerLinks" href="./brownparkdonations.html">Donations</a>
+    </div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="topTextDragDrop">
+    <div class="topText"><h1 class="primaryHeader">PHOTOS FROM OUR GUESTS</h1><br>
+        <p class="bodyCopy">Here at Brown Park, we love seeing our visitor's pictures, and are happy to showcase them on our website! Feel free to submit your photographs here!</p>
+    </div>
+    
+    <div class="dragDrop"><p>Drag & Drop Files Here</p><br>
+        <p>or</p><br>
+    <button onclick="importData()" class="browseFiles">Browse Files</button>
+
+<!--below is a script to open files on your computer,
+even though nothing will actually upload to the site-->
+
+    <script> 
+        function importData() {
+            let input = document.createElement('input');
+                input.type = 'file';
+                input.onchange = _ => {
+                    // you can use this method to get file and perform respective operations
+                        let files =   Array.from(input.files);
+                        console.log(files);
+                        };
+                    input.click();
+                }
+    </script>
+    </div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="centerGallery">
+    <div class="flexGallery">
+        <div class="row">
+            <div class="column">
+                <img src="./images/stoneColumn.JPG">
+                <img src="./images/pinkFlowers1.JPG">
+                <img src="./images/DSC_0070 full.JPG">
+            </div>
+            <div class="column">
+                <img src="./images/DSC_0129.JPG">
+                <img src="./images/pinkFlowers2.JPG">
+                <img src="./images/pinkTree.JPG">
+            </div>
+            <div class="column">
+                <img src="./images/DSC_0125.JPG">
+                <img src="./images/flower.JPG">
+                <img src="./images/whiteFlowersClose.JPG">
+            </div>
+            <div class="column">
+                <img src="./images/seatingArea.JPG">
+                <img src="./images/signRight.JPG">
+                <img src="./images/ducks.JPG">
+                <img src="./images/whiteFlowers.JPG">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const lightbox = document.createElement('div')
+    lightbox.id = 'lightbox'
+    document.body.appendChild(lightbox)
+
+    const images = document.querySelectorAll('img')
+    images.forEach(image => {
+    image.addEventListener('click', e => {
+    lightbox.classList.add('active')
+    const img = document.createElement('img')
+    img.src = image.src
+    while (lightbox.firstChild) {
+      lightbox.removeChild(lightbox.firstChild)
+    }
+    lightbox.appendChild(img)
+  })
+})
+
+    lightbox.addEventListener('click', e => {
+    if (e.target !== e.currentTarget) return
+    lightbox.classList.remove('active')
+})
+</script>
+
+<div class="spacer"></div>
+
+<div class="backToTop"><a class="bottomLink" href="#top">Back to top</a></div>
+
+<div class="footer">
+    <p class="footerText">1000 Browns Lane, St. Matthews, KY 40207</p>
+    <p class="footerText">(502) 000-0000</p>
+    <p class="footerText">louisvillepublicparks@ky.gov</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+.header {
+    height: 90px;
+    width: 100%;
+    background-color: #133E87;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.siteTitle {
+    font-size: 32pt;
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.siteTitle:hover {
+    color: lightblue;
+}
+
+.headerLinksDiv {
+    display: flex;
+    gap: 75px;
+}
+
+@media screen and (max-width: 800px) {
+    .headerLinksDiv {
+      gap: 25px;
+    }
+}
+
+.headerLinks {
+    color: white;
+    font-size: 16pt;
+    text-decoration: none;
+    font-family: "Russo One", sans-serif;
+}
+.headerLinks:hover {
+    color: lightblue;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+.siteHeader {
+    color: white;
+    font-size: 32pt;
+    padding: 25px;
+    font-family: "Russo One", sans-serif;
+}
+
+.wrapper {
+    background-color: #133E87;
+}
+
+.subhead {
+    background-color: #133E87;
+    color: rgb(187, 187, 187);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 16pt;
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+}
+
+h1 {
+    color: #133E87;
+    font-size: 24pt;
+    text-align: center;
+}
+
+.bodyCopy {
+    text-align: center;
+    font-size: 16pt;
+    font-family: "Cabin", sans-serif;
+    line-height: 35px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+@media screen and (max-width: 800px) {
+    .bodyCopy {
+      width: 50vw;
+    }
+}
+
+.bodyCopy2 {
+    text-align: left;
+    font-size: 16pt;
+    font-family: "Cabin", sans-serif;
+    line-height: 35px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    width: 40vw;
+}
+
+@media screen and (max-width: 800px) {
+    .bodyCopy2 {
+      min-width: 70vw;
+    }
+}
+
+.donationDiv {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.spacer {
+    height: 50px;
+}
+
+.formDiv {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.inputText {
+    font-size: 16pt;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+}
+
+.msgBox {
+    font-family: "Russo One", sans-serif;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    font-size: 12pt;
+    height: 75px;
+    width: 100%;
+}
+
+.donationForm {
+    background: #133E87;
+    background: linear-gradient(180deg, #133E87 37%, rgba(255,255,255,1) 100%);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px;
+    width: 35vw;
+    min-width: 400px;
+}
+
+.inputFields {
+    display: flex;
+    flex-direction: column;
+    width: ;
+}
+
+.radButtons {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 16pt;
+}
+
+.companyLogos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.companyIcon {
+    height: 100px;
+}
+
+.companyIcon:hover {
+    cursor: pointer;
+}
+
+.companyIcon:active {
+    cursor: pointer;
+    transform: translateY(4px);
+}
+
+.footer {
+    height: 90px;
+    width: 100%;
+    background-color: #133E87;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+    font-family: "Russo One", sans-serif;
+}
+
+.footerText {
+    color: white;
+    align-self: center;
+}
+
+input {
+    padding:5px;
+    border-radius: 5px;
+}
+
+.buttonDiv {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.submitButton {
+    padding: 10px;
+    width: fit-content;
+    background-color: aquamarine;
+}
+
+.submitButton:hover {
+    background-color: rgb(99, 201, 167);
+}
+
+.submitButton:active {
+    transform: translateY(4px);
+    background-color: rgb(99, 165, 201);
+}
