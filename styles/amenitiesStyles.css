@@ -43,6 +43,12 @@ h1 {
     font-size: 24pt;
 }
 
+@media screen and (max-width: 800px) {
+    h1 {
+    font-size: 18pt;
+    }
+}
+
 .bodyCopy {
     display: flex;
     justify-self: center;
@@ -57,7 +63,7 @@ h1 {
 
 @media screen and (max-width: 800px) {
     .bodyCopy {
-        text-align: center;
+        font-size: 12pt;
     }
 }
 
@@ -88,6 +94,12 @@ h1 {
 
 .spacer {
     height: 50px;
+}
+
+@media screen and (max-width: 800px) {
+    .spacer {
+        height: 25px;
+    }
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");

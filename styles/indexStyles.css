@@ -44,7 +44,7 @@ body {
     align-self: center;
     justify-content: center;
     align-content: center;
-    width: 60vw;
+    width: 40vw;
 }
 
 @media screen and (max-width: 800px) {
@@ -64,11 +64,24 @@ h1 {
     font-size: 24pt;
 }
 
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 18pt;
+  }
+}
+
 .bodyCopy {
   text-align: left;
   font-size: 16pt;
   font-family: "Cabin", sans-serif;
   font-optical-sizing: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .bodyCopy {
+      font-size: 12pt;
+      line-height: 20pt;
+  }
 }
 
 .textDiv1 {
