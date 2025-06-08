@@ -9,14 +9,12 @@
 <body>
     
 <div class="wrapper">
-    <h1 class="siteHeader">Brown Park</h1>
+    <a href="./index.html"><img class="siteLogo" src="./images/BrownLogo.png"></a>
 </div>
 
-<div class="subhead">1000 Browns Lane, St. Matthews, KY 40207</div>
 
 <div class="header">
     <div class="headerLinksDiv">
-        <a class="headerLinks" href="./index.html">Home</a>
         <a class="headerLinks" href="./brownparkamenities.html">Amenities</a>
         <a style="color: rgb(187, 187, 187);" class="headerLinks" href="./brownparkphotos.html">Photos</a>
         <a class="headerLinks" href="./brownparkdonations.html">Donations</a>
@@ -58,25 +56,25 @@ even though nothing will actually upload to the site-->
     <div class="flexGallery">
         <div class="row">
             <div class="column">
-                <img src="./images/stoneColumn.JPG">
-                <img src="./images/pinkFlowers1.JPG">
-                <img src="./images/DSC_0070 full.JPG">
+                <img class="imgSelector" src="./images/stoneColumn.JPG">
+                <img class="imgSelector" src="./images/pinkFlowers1.JPG">
+                <img class="imgSelector" src="./images/DSC_0070 full.JPG">
             </div>
             <div class="column">
-                <img src="./images/DSC_0129.JPG">
-                <img src="./images/pinkFlowers2.JPG">
-                <img src="./images/pinkTree.JPG">
+                <img class="imgSelector" src="./images/DSC_0129.JPG">
+                <img class="imgSelector" src="./images/pinkFlowers2.JPG">
+                <img class="imgSelector" src="./images/pinkTree.JPG">
             </div>
             <div class="column">
-                <img src="./images/DSC_0125.JPG">
-                <img src="./images/flower.JPG">
-                <img src="./images/whiteFlowersClose.JPG">
+                <img class="imgSelector" src="./images/DSC_0125.JPG">
+                <img class="imgSelector" src="./images/flower.JPG">
+                <img class="imgSelector" src="./images/whiteFlowersClose.JPG">
             </div>
             <div class="column">
-                <img src="./images/seatingArea.JPG">
-                <img src="./images/signRight.JPG">
-                <img src="./images/ducks.JPG">
-                <img src="./images/whiteFlowers.JPG">
+                <img class="imgSelector" src="./images/seatingArea.JPG">
+                <img class="imgSelector" src="./images/signRight.JPG">
+                <img class="imgSelector" src="./images/ducks.JPG">
+                <img class="imgSelector" src="./images/whiteFlowers.JPG">
             </div>
         </div>
     </div>
@@ -87,7 +85,7 @@ even though nothing will actually upload to the site-->
     lightbox.id = 'lightbox'
     document.body.appendChild(lightbox)
 
-    const images = document.querySelectorAll('img')
+    const images = document.querySelectorAll('.imgSelector')
     images.forEach(image => {
     image.addEventListener('click', e => {
     lightbox.classList.add('active')
