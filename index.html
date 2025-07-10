@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brown Park Home</title>
     <link rel="stylesheet" href="./styles/indexStyles.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
 </head>
 <body>
 
@@ -17,8 +21,33 @@
         <a class="headerLinks" href="./brownparkamenities.html">Amenities</a>
         <a class="headerLinks" href="./brownparkphotos.html">Photos</a>
         <a class="headerLinks" href="./brownparkdonations.html">Donations</a>
+
+        <nav id='menu'>
+            <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+            <ul>
+                <li><a class='dropdown-arrow'>More</a>
+                <ul class='sub-menus'>
+                <li><a href="./index.html">Home</a></li>
+                <li><a>Contact Us</a></li>
+                <li><a>Other Parks</a></li>
+                <li><a>Report Incident</a></li>
+                </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
+
+<script>
+    function updatemenu() {
+  if (document.getElementById('responsive-menu').checked == true) {
+    document.getElementById('menu').style.borderBottomRightRadius = '0';
+    document.getElementById('menu').style.borderBottomLeftRadius = '0';
+  }else{
+    document.getElementById('menu').style.borderRadius = '10px';
+  }
+}
+</script>
 
 <img class="signImg" src="./images/bluesky.jpg">
 
@@ -27,13 +56,13 @@
 <div class="topTextContainer">
     <div class="textDiv1">
         <div class="hoursLocation">
-            <div><h1>HOURS</h1><br><p class="bodyCopy">Sunday-Monday</p><br>
+            <div><h1 class="lora-h1">Hours</h1 class="lora-h1"><br><p class="bodyCopy">Sunday-Monday</p><br>
                           <p class="bodyCopy">7AM-8PM</p></div>
-            <div><h1>LOCATION</h1><br>
+            <div><h1 class="lora-h1">Location</h1 class="lora-h1"><br>
                 <p class="bodyCopy">1000 Browns Lane, St. Matthews, KY 40207</p></div>
         </div>
         <div class="wmopg" style="text-align: center;">
-            <h1>COME VISIT!</h1><br>
+            <h1 class="lora-h1">Come Visit!</h1 class="lora-h1"><br>
                 <p class="bodyCopy">We offer plenty of activities and ways to spend your day. Host your cookout with our BBQ Grills, or enjoy a walk through our scenic trails. We have a playground too, so feel free to bring the kids! Our duck & geese pond is always a relaxing way to spend some time, and our historic cemetary has been around for over 200 years. However you're looking to spend the day, we've got you covered.</p><br>
         </div>
     </div>
@@ -43,7 +72,7 @@
 
 <div class="photoCarousel">
 
-    <div class="guestPhotosDiv"><a class="guestPhotos" href="./brownparkphotos.html">PHOTOS FROM OUR GUESTS</a></div>
+    <div class="guestPhotosDiv"><a class="guestPhotos" href="./brownparkphotos.html">Photos from our Guests</a></div>
     
         <div class="slider-container">
 
@@ -314,9 +343,10 @@ function goToIndexSlide(index) {
 slideInitial();
 </script>
 
-<div class="spacer"></div>
+<div class="spacer2"></div>
 
-<h1 style="text-align: center;">PARK RULES</h1><br>
+<div class="rulesDiv">
+<h1 class="lora-h1" style="text-align: center;">Park Rules</h1><br>
     <div class="rulesSection">
         <p class="bodyCopy">1.) Park is open from dawn to dusk.</p>
         <p class="bodyCopy">2.) No alcoholic beverages allowed.</p>
@@ -326,6 +356,7 @@ slideInitial();
         <p class="bodyCopy">6.) Restrooms are for everyone’s use, please help keep them clean.</p>
         <p class="bodyCopy">7.) No parking on grass. Park in designated areas only.</p>
     </div>
+</div>
 
 <div class="spacer"></div>
 
@@ -333,7 +364,7 @@ slideInitial();
 
 <div class="spacer"></div>
 
-<div class="historySection"><h1 style="text-align: center;">HISTORY OF BROWN PARK</h1><br>
+<div class="historySection"><h1 class="lora-h1" style="text-align: center;">History of Brown Park</h1 class="lora-h1"><br>
     <p class="bodyCopy" style="line-height: 40px; text-align: left;">Brown Park was founded in 1977 when the James Graham Brown family donated the land to the city of St. Matthews. It was recognized in 1997 as an award winning public park by the Landscape Architecture Magazine. And at a whopping 28 acres in size, you will be provided with ample room for play, a nice walk, or just a peaceful day out.</p>
 </div>
 

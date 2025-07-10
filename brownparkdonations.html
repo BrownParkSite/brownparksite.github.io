@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brown Park Donations</title>
     <link rel="stylesheet" href="./styles/donationStyles.css">
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 </head>
 <body>
         
@@ -16,14 +20,39 @@
     <div class="headerLinksDiv">
         <a class="headerLinks" href="./brownparkamenities.html">Amenities</a>
         <a class="headerLinks" href="./brownparkphotos.html">Photos</a>
-        <a style="color: rgb(187, 187, 187);" class="headerLinks" href="./brownparkdonations.html">Donations</a>
+        <a class="headerLinks" href="./brownparkdonations.html">Donations</a>
+
+        <nav id='menu'>
+            <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+            <ul>
+                <li><a class='dropdown-arrow'>More</a>
+                <ul class='sub-menus'>
+                <li><a href="./index.html">Home</a></li>
+                <li><a>Contact Us</a></li>
+                <li><a>Other Parks</a></li>
+                <li><a>Report Incident</a></li>
+                </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
+
+<script>
+    function updatemenu() {
+  if (document.getElementById('responsive-menu').checked == true) {
+    document.getElementById('menu').style.borderBottomRightRadius = '0';
+    document.getElementById('menu').style.borderBottomLeftRadius = '0';
+  }else{
+    document.getElementById('menu').style.borderRadius = '10px';
+  }
+}
+</script>
 
 <div class="spacer"></div>
 
 <div class="donationDiv">
-    <h1>DONATE TODAY!</h1><br>
+    <h1>Donate Today!</h1><br>
     <p class="bodyCopy2">At Brown Park, we are operated and maintained by your donations. Our playground installment, walking bridges, and on-site bathroom facilities were all provided by public donations. If you feel like you've gotten value out of enjoying our park, consider making a small contribution!</p>
 </div>
 
@@ -31,7 +60,7 @@
 
 <div class="formDiv">
     <form class="donationForm">
-        <h1 style="color: white;">BROWN PARK DONATION FORM</h1>
+        <h1 style="color: white;">Brown Park Donation Form</h1>
 
     <div class="spacer"></div>
 

@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brown Park Amenities</title>
     <link rel="stylesheet" href="./styles/amenitiesStyles.css">
+    
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 </head>
 <body>
     
@@ -14,14 +18,39 @@
 
 <div class="header">
     <div class="headerLinksDiv">
-        <a style="color:rgb(187, 187, 187)" class="headerLinks" href="./brownparkamenities.html">Amenities</a>
+        <a class="headerLinks" href="./brownparkamenities.html">Amenities</a>
         <a class="headerLinks" href="./brownparkphotos.html">Photos</a>
         <a class="headerLinks" href="./brownparkdonations.html">Donations</a>
+
+        <nav id='menu'>
+            <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+            <ul>
+                <li><a class='dropdown-arrow'>More</a>
+                <ul class='sub-menus'>
+                <li><a href="./index.html">Home</a></li>
+                <li><a>Contact Us</a></li>
+                <li><a>Other Parks</a></li>
+                <li><a>Report Incident</a></li>
+                </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
 
+<script>
+    function updatemenu() {
+  if (document.getElementById('responsive-menu').checked == true) {
+    document.getElementById('menu').style.borderBottomRightRadius = '0';
+    document.getElementById('menu').style.borderBottomLeftRadius = '0';
+  }else{
+    document.getElementById('menu').style.borderRadius = '10px';
+  }
+}
+</script>
+
 <div class="introText">
-    <h1 style="text-align: center;">WHY YOU SHOULD COME TO VISIT!</h1><br>
+    <h1 style="text-align: center;">Why You Should Come Visit!</h1><br>
     <p class="bodyCopy" style="margin-left: 40px; margin-right: 40px;">Our park has plenty of offerings for people of all ages. Whether you're looking to go for a run or just enjoy a scenic break, we've got you covered. Check out our offerings below! </p>
 </div>
 
@@ -31,45 +60,55 @@
     
 <div class="spacer"></div>
 
-<h1 style="text-align: center;">DIVERSE FLORA</h1><br>
+<div class="introText2">
+<h1 style="text-align: center;">Diverse Flora</h1><br>
     <p class="bodyCopy" style="margin-left: 40px; margin-right: 40px;">At Brown Park, our horticulturalists have procured dozens of different species of trees to provide a variety of color and scenery during your visit.</p>
-    
+</div>    
+
 <div class="spacer"></div>
 
 <div class="imgBox"><img class="image" src="./images/bridgeCrop.JPG"></div>
 
 <div class="spacer"></div>
 
-<h1 style="text-align: center;">WALKING TRAILS</h1><br>
+<div class="introText2">
+<h1 style="text-align: center;">Walking Trails</h1><br>
     <p class="bodyCopy" style="margin-left: 40px; margin-right: 40px;">Looking to take a jog, clear your mind, or walk the dog? We have miles of paved trails that go in and out of forests, over water, and up & downhill! All of our walking paths also have concrete benches if you ever need to take a break. Come enjoy a walk today!</p>
+</div>
 
 <div class="spacer"></div>
 
 <div class="imgBox" style="margin:25px;"><img style="max-height: 600px; min-width: 150px;" class="image" src="./images/stoneColumn.JPG"><img style="max-height: 600px; min-width: 150px;" class="image" src="./images/stoneColumnDiagram.jpg"></div> 
     
 <div class="spacer"></div>
-    
-<h1 style="text-align: center;">LIMESTONE SCULPTURES</h1><br>
+
+<div class="introText2">
+<h1 style="text-align: center;">Limestone Sculptures</h1><br>
     <p class="bodyCopy" style="margin-left: 40px; margin-right: 40px;">These massive monoliths are representative of the many layers of limestone underneath us, and how the rocks form over thousands of years. Pictures don’t do justice to how large these statues are! Come experience them for yourself and see the underground geology of Kentucky!</p>
-    
+</div>    
+
 <div class="spacer"></div>
 
 <div class="imgBox"><img class="image" src="./images/graveyard.JPG"></div>
 
 <div class="spacer"></div>
 
-<h1 style="text-align: center;">HISTORIC CEMETERY</h1><br>
+<div class="introText2">
+<h1 style="text-align: center;">Historic Cemetery</h1><br>
     <p class="bodyCopy" style="margin-left: 40px; margin-right: 40px;">The historic cemetery is the final resting place of the original founders; the Brown / Lawrence family. They are the ones who originally donated the land to the city of Louisville to develop a public park. The graveyard has headstones that date back to the 1800’s!</p>
-    
+</div> 
+
 <div class="spacer"></div>
 
 <div class="imgBox"><img class="image" src="./images/ducks.JPG"></div>
 
 <div class="spacer"></div>
 
-<h1 style="text-align: center;">WILDLIFE</h1><br>
+<div class="introText2">
+<h1 style="text-align: center;">Wildlife</h1><br>
     <p class="bodyCopy" style="margin-left: 40px; margin-right: 40px;">Brown Park boasts a wide variety of wildlife, from Ducks, Geese, Squirrels, & Rabbits. While it’s always fun to observe wild animals, we ask that you keep a safe distance.</p>
-    
+</div>
+
 <div class="spacer"></div>
 
 <div class="backToTop"><a class="bottomLink" href="#top">Back to top</a></div>

@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brown Park Guest Photos</title>
     <link rel="stylesheet" href="./styles/photosStyles.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
 </head>
 <body>
     
@@ -16,15 +20,40 @@
 <div class="header">
     <div class="headerLinksDiv">
         <a class="headerLinks" href="./brownparkamenities.html">Amenities</a>
-        <a style="color: rgb(187, 187, 187);" class="headerLinks" href="./brownparkphotos.html">Photos</a>
+        <a class="headerLinks" href="./brownparkphotos.html">Photos</a>
         <a class="headerLinks" href="./brownparkdonations.html">Donations</a>
+
+        <nav id='menu'>
+            <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+            <ul>
+                <li><a class='dropdown-arrow'>More</a>
+                <ul class='sub-menus'>
+                <li><a href="./index.html">Home</a></li>
+                <li><a>Contact Us</a></li>
+                <li><a>Other Parks</a></li>
+                <li><a>Report Incident</a></li>
+                </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
+
+<script>
+    function updatemenu() {
+  if (document.getElementById('responsive-menu').checked == true) {
+    document.getElementById('menu').style.borderBottomRightRadius = '0';
+    document.getElementById('menu').style.borderBottomLeftRadius = '0';
+  }else{
+    document.getElementById('menu').style.borderRadius = '10px';
+  }
+}
+</script>
 
 <div class="spacer"></div>
 
 <div class="topTextDragDrop">
-    <div class="topText"><h1 class="primaryHeader">PHOTOS FROM OUR GUESTS</h1><br>
+    <div class="topText"><h1 class="primaryHeader">Photos from our Guests</h1><br>
         <p class="bodyCopy">Here at Brown Park, we love seeing our visitor's pictures, and are happy to showcase them on our website! Feel free to submit your photographs here!</p>
     </div>
     
@@ -56,24 +85,22 @@ even though nothing will actually upload to the site-->
     <div class="flexGallery">
         <div class="row">
             <div class="column">
-                <img class="imgSelector" src="./images/stoneColumn.JPG">
-                <img class="imgSelector" src="./images/pinkFlowers1.JPG">
-                <img class="imgSelector" src="./images/DSC_0070 full.JPG">
-            </div>
-            <div class="column">
-                <img class="imgSelector" src="./images/DSC_0129.JPG">
                 <img class="imgSelector" src="./images/pinkFlowers2.JPG">
                 <img class="imgSelector" src="./images/pinkTree.JPG">
+                <img class="imgSelector" src="./images/pinkFlowers1.JPG">
             </div>
             <div class="column">
+                <img class="imgSelector" src="./images/DSC_0070.JPG">
+                <img class="imgSelector" src="./images/stoneColumn.JPG">
+            </div>
+            <div class="column">
+                <img class="imgSelector" src="./images/whiteFlowersClose.JPG">
                 <img class="imgSelector" src="./images/DSC_0125.JPG">
                 <img class="imgSelector" src="./images/flower.JPG">
-                <img class="imgSelector" src="./images/whiteFlowersClose.JPG">
             </div>
             <div class="column">
-                <img class="imgSelector" src="./images/seatingArea.JPG">
                 <img class="imgSelector" src="./images/signRight.JPG">
-                <img class="imgSelector" src="./images/ducks.JPG">
+                <img class="imgSelector" src="./images/seatingArea.JPG">
                 <img class="imgSelector" src="./images/whiteFlowers.JPG">
             </div>
         </div>
