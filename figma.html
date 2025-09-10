@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brown Park Home</title>
+    <link rel="stylesheet" href="./styles/indexStyles.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <a href="./index.html"><img class="siteLogo" src="./images/BrownLogo.png"></a>
+</div>
+
+<div class="header">
+    <div class="headerLinksDiv">
+        <a class="headerLinks" href="./brownparkamenities.html">Amenities</a>
+        <a class="headerLinks" href="./brownparkphotos.html">Photos</a>
+        <a class="headerLinks" href="./brownparkdonations.html">Donations</a>
+
+        <nav id='menu'>
+            <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+            <ul>
+                <li><a class='dropdown-arrow'>More</a>
+                <ul class='sub-menus'>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./figma.html">Figma Mockups</a></li>
+                </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<script>
+    function updatemenu() {
+  if (document.getElementById('responsive-menu').checked == true) {
+    document.getElementById('menu').style.borderBottomRightRadius = '0';
+    document.getElementById('menu').style.borderBottomLeftRadius = '0';
+  }else{
+    document.getElementById('menu').style.borderRadius = '10px';
+  }
+}
+</script>
+
+<div class="introText">
+    <h1 style="text-align: center; color: white;">Figma Mockups</h1><br>
+    <p class="bodyCopy" style="text-align: center; color: black; padding-left: 20px; padding-right: 20px;">These are a series of mockups I created in Figma before coding on the actual site. You can click on the image to view them individually, and click on the section titles to navigate to the final page!</p>
+</div>
+
+<div class="spacer"></div>
+
+<div class="figmaPicsDiv">
+
+    <div class="pic1Div">
+        <div class="blurb">
+            <a href="./index.html"><h1 class="blurbHeaders" style="text-align: center; text-decoration: underline;">Home Page</h1></a>
+            <p class="bodyCopy">This was the original mockup of the homepage done in Figma. Most of the elements were translated to the actual site, but there were a lot of changes aesthetically.
+            The final version has some additions such as park rules, an image carousel, an embedded map, and a different navigation bar.
+            </p>
+        </div>
+
+            <image class="figmaPics imgSelector" src="./images/figma1.png"></image>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="pic1Div">
+        <div class="blurb">
+            <a href="./brownparkdonations.html"><h1 class="blurbHeaders" style="text-align: center; text-decoration: underline;">Reserve Pavillion</h1></a>
+            <p class="bodyCopy">For each of my websites, I needed to include a form. My original idea was to have a 'reserve the pavillion' page, but I ended up creating a
+            donations page for the final version.
+            </p>
+        </div>
+
+            <image class="figmaPics imgSelector" src="./images/figma2.png"></image>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="pic1Div">
+        <div class="blurb">
+            <a href="./brownparkamenities.html"><h1 class="blurbHeaders" style="text-align: center; text-decoration: underline;">Amenities</h1></a>
+            <p class="bodyCopy">Out of all the mockups I created for this site, this is definitely the one that ended up resembling the final site the most. Some of the photos I went with
+            are different in the completed version, but structurally they are almost identical.
+            </p>
+        </div>
+
+            <image class="figmaPics imgSelector" src="./images/figma3.jfif"></image>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="pic1Div">
+        <div class="blurb">
+            <a href="./brownparkphotos.html"><h1 class="blurbHeaders" style="text-align: center; text-decoration: underline;">Photo Gallery</h1></a>
+            <p class="bodyCopy">This was also a page that ended up resembling the mockup a lot in the final version. I did my best to recreate the 'drag and drop'
+            icon which has some functionality in the final version.
+            </p>
+        </div>
+
+            <image class="figmaPics imgSelector" src="./images/figma4.png"></image>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="pic1Div">
+        <div class="blurb">
+            <a href="./index.html"><h1 class="blurbHeaders" style="text-align: center; text-decoration: underline;">Park Rules</h1></a>
+            <p class="bodyCopy">This was a section that I originally had as an individual page, but ended up adding it onto the Home Page of the final site.
+            In the end I didn't think it justified an entire page to itself.
+            </p>
+        </div>
+
+            <image class="figmaPics imgSelector" src="./images/figma5.png"></image>
+    </div>
+
+    <div class="spacer"></div>
+
+</div>
+
+<div class="backToTopBox">
+    <div class="backToTop"><a class="bottomLink" href="#top">Back to top</a></div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="footer">
+    <p class="footerText">1000 Browns Lane, St. Matthews, KY 40207</p>
+    <p class="footerText">(502) 000-0000</p>
+    <p class="footerText">louisvillepublicparks@ky.gov</p>
+</div>
+
+<script>
+    const lightbox = document.createElement('div')
+    lightbox.id = 'lightbox'
+    document.body.appendChild(lightbox)
+
+    const images = document.querySelectorAll('.imgSelector')
+    images.forEach(image => {
+    image.addEventListener('click', e => {
+    lightbox.classList.add('active')
+    const img = document.createElement('img')
+    img.src = image.src
+    while (lightbox.firstChild) {
+      lightbox.removeChild(lightbox.firstChild)
+    }
+    lightbox.appendChild(img)
+  })
+})
+
+    lightbox.addEventListener('click', e => {
+    if (e.target !== e.currentTarget) return
+    lightbox.classList.remove('active')
+})
+</script>
+
+</body>
+</html>

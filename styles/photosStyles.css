@@ -1,0 +1,414 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+.montserrat-bodycopy {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.lora-h1 {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+}
+
+.header {
+    height: 60px;
+    padding-top: 10px;
+    width: 100%;
+    background-color: #133E87;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.siteLogo {
+  max-width: 100vw;
+  max-height: 250px;
+  display: flex;
+  justify-self: center;
+  transition: 1s ease-in-out;
+}
+
+.siteLogo:hover {
+    scale: 1.05;
+}
+
+@media screen and (max-width: 800px) {
+  .siteLogo {
+    height: 150px;
+  }
+}
+
+.headerLinksDiv {
+    display: flex;
+    gap: 75px;
+}
+
+@media screen and (max-width: 800px) {
+    .headerLinksDiv {
+      gap: 25px;
+    }
+  }
+
+.headerLinks {
+    color: white;
+    font-size: 16pt;
+    text-decoration: none;
+    font-family: "Russo One", sans-serif;
+}
+.headerLinks:hover {
+    color: yellow;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+.siteHeader {
+    color: white;
+    font-size: 32pt;
+    padding: 25px;
+    font-family: "Russo One", sans-serif;
+    text-align: center;
+}
+
+.wrapper {
+    background-color: #133E87;
+}
+
+.subhead {
+    background-color: #133E87;
+    color: rgb(187, 187, 187);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 16pt;
+    font-family: "Russo One", sans-serif;
+}
+
+#menu {
+	background: #133E87;
+	height: 45px;
+	border-radius: 10px;
+}
+#menu ul, #menu li {
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+}
+#menu ul {
+	width: 100%;
+	text-align: left;
+}
+#menu li {
+	display: inline-block;
+	position: relative;
+}
+#menu a {
+	  color: white;
+    font-size: 16pt;
+    text-decoration: none;
+    font-family: "Russo One", sans-serif;
+}
+#menu a.dropdown-arrow:after {
+	content: "\25BE";
+	margin-left: 5px;
+}
+#menu li a:hover {
+	color: yellow;
+    cursor: pointer;
+}
+#menu input {
+	display: none;
+	margin: 0;
+	padding: 0;
+	height: 45px;
+	width: 100%;
+	opacity: 0;
+	cursor: pointer
+}
+#menu label {
+	display: none;
+	line-height: 45px;
+	text-align: center;
+	position: absolute;
+	left: 35px
+}
+#menu label:before {
+	font-size: 1.6em;
+	color: #FFFFFF;
+	content: "\2261"; 
+	margin-left: 20px;
+}
+#menu ul.sub-menus{
+	height: auto;
+	overflow: hidden;
+	width: 120px;
+	background: #444444;
+	position: absolute;
+	z-index: 99;
+	display: none;
+}
+#menu ul.sub-menus li {
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+#menu ul.sub-menus a {
+	color: #FFFFFF;
+	font-size: 16px;
+}
+#menu li:hover ul.sub-menus {
+	display: block
+}
+#menu ul.sub-menus a:hover{
+	background: #F2F2F2;
+	color: #444444;
+}
+
+.spacer {
+    height: 50px;
+}
+
+.topTextDragDrop {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.dragDrop {
+    background-image: repeating-linear-gradient(0deg, #333333, #333333 10px, transparent 10px, transparent 20px, #333333 20px), repeating-linear-gradient(90deg, #333333, #333333 10px, transparent 10px, transparent 20px, #333333 20px), repeating-linear-gradient(180deg, #333333, #333333 10px, transparent 10px, transparent 20px, #333333 20px), repeating-linear-gradient(270deg, #333333, #333333 10px, transparent 10px, transparent 20px, #333333 20px);
+    background-size: 3px calc(100% + 20px), calc(100% + 20px) 3px, 3px calc(100% + 20px) , calc(100% + 20px) 3px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+    animation: borderAnimation 0.8s infinite linear;
+    border-radius: 15px;
+    text-align: center;
+    padding: 30px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 16pt;
+    font-family: "Russo One", sans-serif;
+    }
+    
+    @keyframes borderAnimation {
+    from { background-position: 0 0, -20px 0, 100% -20px, 0 100%; }
+    to { background-position: 0 -20px, 0 0, 100% 0, -20px 100%; }
+}
+
+.browseFiles {
+    border-color: #133E87;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    width:fit-content;
+    justify-self: center;
+    padding: 5px;
+    font-size: 16pt;
+    color: #133E87;
+    box-shadow: 5px 5px;
+}
+
+.browseFiles:hover {
+    background-color: turquoise;
+}
+
+.browseFiles:active {
+    background-color: rgb(44, 160, 148);
+    transform: translateY(4px);
+}
+
+.topText {
+    width: 50vw;
+    background-color: #337eff;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.primaryHeader {
+    color: white;
+    font-size: 24pt;
+    text-align: center;
+    font-family: "Lora", serif;
+}
+
+@media screen and (max-width: 800px) {
+    .primaryHeader {
+      line-height: 25px;
+      font-size: 16pt;
+    }
+  }
+
+.bodyCopy {
+  text-align: left;
+  font-size: 12pt;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .bodyCopy {
+      font-size: 10pt;
+      line-height: 20pt;
+  }
+}
+
+.flexGallery {
+    width: 100vw;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.centerGallery {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-left: 25px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1000px) {
+    .centerGallery {
+      margin-left: 0;
+    }
+}
+
+img {
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+  
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 24%;
+    max-width: 24%;
+    padding: 0 4px;
+}
+  
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+      flex: 48%;
+      max-width: 48%;
+    }
+}
+  
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1400px) {
+    .column {
+      flex: 48%;
+      max-width: 48%;
+    }
+}
+  
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1000px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+    .topText {
+        margin-right: 20px;
+    }
+}
+
+.footer {
+    height: 90px;
+    width: 100%;
+    background-color: #133E87;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+    font-family: "Russo One", sans-serif;
+}
+
+.backToTop {
+    display: flex;
+    justify-content: center;
+    font-size: 24pt;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    font-family: "Russo One", sans-serif;
+}
+
+.backToTopBox {
+  width: fit-content;
+  display: flex;
+  align-content: center;
+  align-self: center;
+  justify-content: center;
+  justify-self: center;
+  flex-direction: column;
+  background-color: tan;
+  border-radius: 15px;
+  height: 80px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.bottomLink {
+  font-family: "Lora", serif;
+  text-decoration: underline;
+  font-size: 16pt; 
+  color: black;
+}
+
+.bottomLink:hover {
+    color: #337eff;
+}
+
+.footerText {
+    color: white;
+    align-self: center;
+}
+
+#lightbox {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    display: none;
+}
+  
+#lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+#lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    padding: 4px;
+    background-color: black;
+    border: 2px solid white;
+}
